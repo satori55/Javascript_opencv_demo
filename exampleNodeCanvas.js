@@ -1,6 +1,7 @@
 const { Canvas, createCanvas, Image, ImageData, loadImage } = require('canvas');
 const { JSDOM } = require('jsdom');
 const { writeFileSync, existsSync, mkdirSync } = require("fs");
+
 // This is our program. This time we use JavaScript async / await and promises to handle asynchronicity.
 (async () => {
     // before loading opencv.js we emulate a minimal HTML DOM. See the function declaration below.
@@ -20,6 +21,7 @@ const { writeFileSync, existsSync, mkdirSync } = require("fs");
     src.delete();
     dst.delete();
 })();
+
 // Load opencv.js just like before but using Promise instead of callbacks:
 function loadOpenCV() {
     return new Promise(resolve => {
@@ -29,6 +31,7 @@ function loadOpenCV() {
         global.cv = require('./opencv.js');
     });
 }
+
 // Using jsdom and node-canvas we define some global variables to emulate HTML DOM.
 // Although a complete emulation can be archived, here we only define those globals used
 // by cv.imread() and cv.imshow().
