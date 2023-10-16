@@ -10,4 +10,5 @@ Install node_module before run on node.js
 npm init -y
 npm install jimp
 npm install canvas jsdom
+# see the compiling doc of node-canvas for npm install canvas --build-from-source on the insupported OS!!
 ```
