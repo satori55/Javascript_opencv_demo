@@ -8,7 +8,7 @@ const { writeFileSync, existsSync, mkdirSync } = require("fs");
     installDOM();
     await loadOpenCV();
     // using node-canvas, we an image file to an object compatible with HTML DOM Image and therefore with cv.imread()
-    const image = await loadImage('./lenna.png');
+    const image = await loadImage('./Lenna.png');
     const src = cv.imread(image);
     const dst = new cv.Mat();
     const M = cv.Mat.ones(5, 5, cv.CV_8U);
