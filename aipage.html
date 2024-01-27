@@ -57,9 +57,19 @@
     </div>
 
     <!-- Article Content -->
-    <article class="text-gray-700">
-      <p>Here is article.</article></p>
-    </article>
+    <div id="content-here">get article</div>
+
+    <script>
+      fetch('source.html')
+              .then(response => response.text())
+              .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const article = doc.querySelector('#article').innerHTML;
+                document.getElementById('content-here').innerHTML = article;
+              });
+    </script>
+
   </div>
 </body>
 </html>
